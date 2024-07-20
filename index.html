@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Comandas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Manejo de Comandas</h1>
+        <button id="nuevaComanda" class="nueva-comanda-button">Nueva Comanda</button>
+        <button id="enviarComanda" class="enviar-button">Enviar Comanda</button>
+        <form id="comandaForm">
+            <div class="form-row">
+                <div class="form-group form-group-full">
+                    <label for="mesa">Mesa:</label>
+                    <input type="text" id="mesa" placeholder="Nombre de la mesa">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group form-group-small">
+                    <label for="cant">Cant:</label>
+                    <input type="number" id="cant" value="1" readonly>
+                </div>
+                <div class="form-group form-group-large">
+                    <label for="productoBusqueda">Productos:</label>
+                    <input type="text" id="productoBusqueda" placeholder="Buscar productos...">
+                    <select id="productos" size="5"></select>
+                </div>
+                <button type="submit">Agregar Comanda</button>
+            </div>
+        </form>
+        <table id="comandaTable">
+            <thead>
+                <tr>
+                    <th>Cant</th>
+                    <th>Productos</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Comandas agregadas aparecerán aquí -->
+            </tbody>
+        </table>
+        <!-- Ventana de validación de usuario -->
+        <div id="validacionUsuario" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Validar Usuario</h2>
+                <img src="loguin-monkey.png" alt="Login Monkey" class="login-image">
+                <form id="usuarioForm">
+                    <div class="form-group">
+                        <label for="usuarioBusqueda">Usuario:</label>
+                        <input type="text" id="usuarioBusqueda" placeholder="Buscar usuarios...">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" placeholder="Contraseña">
+                    </div>
+                    <button type="submit">Validar</button>
+                    <p id="error-message" class="error-message"></p>
+                </form>
+            </div>
+        </div>
+        <!-- Ventana para seleccionar copias -->
+        <div id="copiasComanda" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Cuantas copias de comandas necesitas</h2>
+                <form id="copiasForm">
+                    <div class="form-group">
+                        <label for="numCopias">Número de copias:</label>
+                        <select id="numCopias">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

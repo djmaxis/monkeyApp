@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    position: relative; /* Para manejar el modal */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nueva-comanda-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.nueva-comanda-button:hover {
+    background-color: #ff1c1c;
+}
+
+.enviar-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.enviar-button:hover {
+    background-color: #0056b3;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-group-full {
+    flex: 1 1 100%;
+}
+
+.form-group-small {
+    flex: 1 1 80px; /* Tamaño reducido para la celda de Cant */
+}
+
+.form-group-large {
+    flex: 3; /* Tamaño mayor para la celda de productos */
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="number"] {
+    background-color: #d3d3d3;
+}
+
+input, select {
+    padding: 10px;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    flex: 1 1 auto;
+    text-align: center;
+    max-height: 45px; /* Asegurar que el botón tenga la misma altura que los campos de entrada */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+#productos {
+    display: none; /* Ocultar lista por defecto */
+    position: absolute;
+    width: calc(100% - 20px);
+    max-height: 150px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    top: calc(100% + 5px); /* Espacio para separarlo del campo de búsqueda */
+}
+
+#productos.show {
+    display: block; /* Mostrar lista cuando tenga la clase 'show' */
+}
+
+#productos option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+#comandaTable {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#comandaTable th, #comandaTable td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+#comandaTable th {
+    background-color: #f4f4f4;
+}
+
+.delete-button {
+    background-color: #ff4c4c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.delete-button:hover {
+    background-color: #ff1c1c;
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+/* Estilos para el modal de validación de usuario */
+.modal {
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+}
+
+.login-image {
+    width: 50%;
+    margin: 20px auto;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+button[type="submit"] {
+    align-self: center; /* Justificar el botón al centro */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
